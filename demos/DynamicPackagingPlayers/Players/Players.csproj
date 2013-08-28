@@ -181,9 +181,15 @@
     <Content Include="clientaccesspolicy.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="ClientBin\MSAdaptiveStreamingPlugin-v1.0.5-osmf2.0.swf" />
-    <Content Include="ClientBin\Player.xap" />
-    <Content Include="ClientBin\StrobeMediaPlayback.swf" />
+    <Content Include="ClientBin\MSAdaptiveStreamingPlugin-v1.0.5-osmf2.0.swf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientBin\Player.xap">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ClientBin\StrobeMediaPlayback.swf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />

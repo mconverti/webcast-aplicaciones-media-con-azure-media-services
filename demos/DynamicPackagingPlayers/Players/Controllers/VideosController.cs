@@ -33,7 +33,7 @@
             {
                 var item = new ApiAssetItemViewModel
                 {
-                    Id = asset.Id,
+                    Id = asset.Id.Replace(':', '-'),
                     Title = asset.Name,
                     Type = "VOD",
                     CreatedDate = asset.Created,

@@ -15,7 +15,7 @@ function UpdateVideosList() {
 
             $('#videoList').append(imageDiv);
 
-            $("div[id='" + video.Id + "'").click(function () {
+            $('#' + video.Id).click(function () {
                 VideoSelected(video);
             });
 
