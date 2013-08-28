@@ -1,4 +1,6 @@
-webcast-aplicaciones-media-con-azure-media-services
-===================================================
+[Webcast] Creando de aplicaciones Media con Windows Azure Media Services
+========================================================================
 
-Material para el webcast "Serie Azure: Creando aplicaciones Media con Windows Azure Media Services": https://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032559261&amp;Culture=es-AR&amp;community=0
+Material para el webcast _Serie Azure: Creando aplicaciones Media con Windows Azure Media Services_: https://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032559261&amp;Culture=es-AR&amp;community=0.
+
+Más detalles: http://blogs.southworks.net/mconverti/2013/08/27/spanish-webcast-creando-aplicaciones-media-con-windows-azure-media-services/
