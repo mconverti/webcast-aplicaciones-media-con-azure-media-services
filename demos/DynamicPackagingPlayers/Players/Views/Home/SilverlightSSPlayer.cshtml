@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Videos - Silverlight Player";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+
+<div class="row">
+    <div class="span2">
+        <div id="videoList">
+        </div>
+    </div>
+    <div class="span10">
+        <h3 id="videoTitle"></h3>
+        <div id="playerContainer"></div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="@Url.Content("~/Scripts/Videos.SLPlayer.js")"></script>
+    <script src="@Url.Content("~/Scripts/Videos.js")"></script>
+}

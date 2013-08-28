@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Videos - HTML5 Player";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+
+<div class="row-fluid">
+    <div class="span2">
+        <div id="videoList">
+        </div>
+    </div>
+    <div class="span8">
+        <h3 id="videoTitle"></h3>
+        <video id="player">
+            <strong>Your browser does not support HTML5 video.</strong>
+        </video>
+    </div>
+</div>
+
+@section scripts{
+    @*@Scripts.Render("~/bundles/jquerymobile")*@
+
+    <script src="@Url.Content("~/Scripts/jquery.ui.touch-punch.js")"></script>
+    <script src="@Url.Content("~/Scripts/Videos.iPadPlayer.js")"></script>
+    <script src="@Url.Content("~/Scripts/Videos.js")"></script>
+}
