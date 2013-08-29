@@ -21,11 +21,15 @@
             <ColumnDefinition Width="90"/>
         </Grid.ColumnDefinitions>
         <TextBlock VerticalAlignment="Center" TextAlignment="Center" Text="Source" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" FontSize="20" />
-        <TextBox Width="Auto" x:Name="Source" VerticalAlignment="Center" Text="http://mediadl.microsoft.com/mediadl/iisnet/smoothmedia/Experience/BigBuckBunny_720p.ism/Manifest" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" FontSize="20"></TextBox>
+        <TextBox Width="Auto" x:Name="Source" VerticalAlignment="Center" Text="http://wams.edgesuite.net/media/SintelTrailer_MP4_from_WAME/sintel_trailer-1080p.ism/manifest(format=mpd-time-csf)" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" FontSize="20"></TextBox>
         <Button Click="Button_Click" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" FontSize="20">Load</Button>
         <mmppf:MediaPlayer x:Name="Player" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
             <mmppf:MediaPlayer.Plugins>
-                <adaptive:AdaptivePlugin />
+                <adaptive:AdaptivePlugin>
+                    <adaptive:AdaptivePlugin.DownloaderPlugin>
+                        <dash:DashDownloaderPlugin />
+                    </adaptive:AdaptivePlugin.DownloaderPlugin>
+                </adaptive:AdaptivePlugin>
             </mmppf:MediaPlayer.Plugins>
         </mmppf:MediaPlayer>
     </Grid>
