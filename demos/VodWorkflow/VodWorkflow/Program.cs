@@ -1,8 +1,10 @@
 ﻿namespace VodWorkflow
 {
     using System;
+    using System.Collections.Generic;
     using System.Configuration;
     using System.Diagnostics;
+    using System.Linq;
     using System.Threading;
     using Microsoft.WindowsAzure.MediaServices.Client;
 
@@ -68,24 +70,33 @@
 
             Console.WriteLine("Publicando output asset...");
 
-            // 4. Publish the output asset by creating an Origin locator for adaptive streaming.
+            // 4. Publish the output asset by creating an Origin locator for adaptive streaming, and a SAS locator for progressive download.
             context.CreateLocator(outputAsset, LocatorType.OnDemandOrigin, AccessPermissions.Read, TimeSpan.FromDays(30));
+            context.CreateLocator(outputAsset, LocatorType.Sas, AccessPermissions.Read, TimeSpan.FromDays(30));
 
-            // 5. Generate the Smooth Streaming, HLS and MPEG-DASH URLs for adaptive streaming.
+            IEnumerable<IAssetFile> mp4AssetFiles = outputAsset
+                    .AssetFiles
+                    .ToList()
+                    .Where(af => af.Name.EndsWith(".mp4", StringComparison.OrdinalIgnoreCase));
+
+            // 5. Generate the Smooth Streaming, HLS and MPEG-DASH URLs for adaptive streaming, and the Progressive Download URL.
             Uri smoothStreamingUri = outputAsset.GetSmoothStreamingUri();
             Uri hlsUri = outputAsset.GetHlsUri();
             Uri mpegDashUri = outputAsset.GetMpegDashUri();
+            List<Uri> mp4ProgressiveDownloadUris = mp4AssetFiles.Select(af => af.GetSasUri()).ToList();
 
             Console.WriteLine(smoothStreamingUri);
             Console.WriteLine(hlsUri);
             Console.WriteLine(mpegDashUri);
+            mp4ProgressiveDownloadUris.ForEach(uri => Console.WriteLine(uri));
 
-            string filePath = @"asset-adaptive-streaming-urls.txt";
+            string filePath = @"asset-urls.txt";
 
             // 6. Save the URLs to a local file.
             smoothStreamingUri.Save(filePath);
             hlsUri.Save(filePath);
             mpegDashUri.Save(filePath);
+            mp4ProgressiveDownloadUris.ForEach(uri => uri.Save(filePath));
 
             Console.WriteLine("Output asset disponible para adaptive streaming.");
 
