@@ -11,7 +11,7 @@ function UpdateVideosList() {
         $('#videoList').empty();
 
         $.each(videos, function (index, video) {
-            var imageDiv = '<div id="' + video.Id + '"><p>' + video.Title + '</p></div>';
+            var imageDiv = '<div id="' + video.Id + '"><p style="cursor:pointer">' + video.Title + '</p></div>';
 
             $('#videoList').append(imageDiv);
 
