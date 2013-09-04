@@ -2,7 +2,7 @@
 =====================================================================
 
 Material para el webcast _Serie Azure: Creando aplicaciones Media con Windows Azure Media Services_:
-- Registración: https://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032559261&Culture=es-AR&community=0
+- Evento: https://msevents.microsoft.com/CUI/EventDetail.aspx?EventID=1032559261&Culture=es-AR&community=0
 - Fecha: Jueves 29 de Agosto de 2013
 - Horario: 12:00 PM (GMT-03:00 Buenos Aires, Argentina)
 - Duración: 1 hora (aproximadamente)
